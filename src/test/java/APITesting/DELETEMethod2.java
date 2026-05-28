@@ -6,7 +6,7 @@ import static org.hamcrest.Matchers.*;
 //import io.restassured.http.ContentType;
 //import java.util.HashMap;
 
-public class DELETEMethod01 {
+public class DELETEMethod2 {
 
 	//public static String token;
 
@@ -25,14 +25,14 @@ public class DELETEMethod01 {
 		System.out.println("Token ===> " + token);
 	}*/
 
-	@Test(/*priority = 2, dependsOnMethods = { "token" },*/ dependsOnGroups = { "getBooking1" }, groups = {"deleteUser"})
+	@Test(/*priority = 2, dependsOnMethods = { "token" },*/ dependsOnGroups = { "deleteUser" }, groups = {"deleteUser2"})
 	void deleteMethod() {
 
 		given().header("Cookie", "token=" + PUTMethod01.token).when()
 				.delete("https://restful-booker.herokuapp.com/booking/" + Postmethod01.bookingID).then().log().all()
-				.statusLine(containsString("HTTP/1.1 201 Created")).statusCode(201)
+				.statusLine(containsString("HTTP/1.1 405 Method Not Allowed")).statusCode(405)
 				.header("Content-Type", containsString("text/plain"))
-				.body(equalTo("Created"));
+				.body(equalTo("Method Not Allowed"));
 	}
 
 }

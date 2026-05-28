@@ -3,32 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="APITesting.DELETEMethod01">
+      <class name="APITesting.DELETEMethod2">
         <methods>
           <include name="putMethod"/>
         </methods>
-      </class> <!-- APITesting.DELETEMethod01 -->
-      <class name="APITesting.GETMethod01">
-        <methods>
-          <include name="getMethod"/>
-        </methods>
-      </class> <!-- APITesting.GETMethod01 -->
-      <class name="APITesting.GETMethod02">
-        <methods>
-          <include name="getMethod"/>
-        </methods>
-      </class> <!-- APITesting.GETMethod02 -->
-      <class name="APITesting.PUTMethod01">
-        <methods>
-          <include name="token"/>
-          <include name="putMethod"/>
-        </methods>
-      </class> <!-- APITesting.PUTMethod01 -->
-      <class name="APITesting.Postmethod01">
-        <methods>
-          <include name="postUser"/>
-        </methods>
-      </class> <!-- APITesting.Postmethod01 -->
+      </class> <!-- APITesting.DELETEMethod2 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
