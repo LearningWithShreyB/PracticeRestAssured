@@ -3,12 +3,15 @@ package APITesting;
 import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
+import io.restassured.http.ContentType;
 
 import java.util.HashMap;
 
 public class Postmethod01 {
+	
+	public static int bookingID;
 
-	@Test
+	@Test(groups = {"createBooking"})
 	void postUser() {
 		HashMap<String, Object> bookingDates = new HashMap<>();
 
@@ -24,16 +27,19 @@ public class Postmethod01 {
 		requestBody.put("bookingdates", bookingDates);
 		requestBody.put("additionalneeds", "Breakfast");
 
-		given().contentType("application/json").body(requestBody).when()
+		bookingID=given().contentType(ContentType.JSON).body(requestBody).when()
 				.post("https://restful-booker.herokuapp.com/booking")
 				.then()
 				.log().all()
-				.statusLine(containsString("OK")).statusCode(200).header("Content-Type", "application/json; charset=utf-8")
+				.statusLine(containsString("OK")).statusCode(200).header("Content-Type", containsString("application/json"))
 				.body("booking.firstname", equalTo("Jim")).body("booking.lastname", equalTo("Brown"))
 				.body("booking.totalprice", equalTo(111)).body("booking.depositpaid", equalTo(true))
 				.body("booking.bookingdates.checkin", equalTo("2018-01-01"))
 				.body("booking.bookingdates.checkout", equalTo("2019-01-01"))
-				.body("booking.additionalneeds", equalTo("Breakfast")).time(lessThan(20000L));
+				.body("booking.additionalneeds", equalTo("Breakfast")).time(lessThan(20000L))
+				.extract().jsonPath().getInt("bookingid");
+		
+		System.out.println("Booking ID ===> "+bookingID);
 	}
 
 }
