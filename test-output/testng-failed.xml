@@ -5,9 +5,14 @@
     <classes>
       <class name="APITesting.DELETEMethod2">
         <methods>
-          <include name="putMethod"/>
+          <include name="deleteMethod"/>
         </methods>
       </class> <!-- APITesting.DELETEMethod2 -->
+      <class name="APITesting.GETMethod4">
+        <methods>
+          <include name="getMethod"/>
+        </methods>
+      </class> <!-- APITesting.GETMethod4 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
