@@ -1,26 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-05-28T23:06:12 IST" name="Default suite" finished-at="2026-05-28T23:06:20 IST" duration-ms="7623">
+  <suite started-at="2026-05-29T00:04:02 IST" name="Default suite" finished-at="2026-05-29T00:04:39 IST" duration-ms="37165">
     <groups>
+      <group name="deleteUser">
+        <method signature="DELETEMethod01.putMethod()[pri:0, instance:APITesting.DELETEMethod01@14cd1699]" name="putMethod" class="APITesting.DELETEMethod01"/>
+      </group> <!-- deleteUser -->
+      <group name="updateUser">
+        <method signature="PUTMethod01.putMethod()[pri:2, instance:APITesting.PUTMethod01@71d44a3]" name="putMethod" class="APITesting.PUTMethod01"/>
+      </group> <!-- updateUser -->
+      <group name="getBooking">
+        <method signature="GETMethod01.getMethod()[pri:0, instance:APITesting.GETMethod01@a1153bc]" name="getMethod" class="APITesting.GETMethod01"/>
+      </group> <!-- getBooking -->
+      <group name="getBooking1">
+        <method signature="GETMethod02.getMethod()[pri:0, instance:APITesting.GETMethod02@4218d6a3]" name="getMethod" class="APITesting.GETMethod02"/>
+      </group> <!-- getBooking1 -->
       <group name="createBooking">
-        <method signature="Postmethod01.postUser()[pri:0, instance:APITesting.Postmethod01@3270d194]" name="postUser" class="APITesting.Postmethod01"/>
+        <method signature="Postmethod01.postUser()[pri:0, instance:APITesting.Postmethod01@76505305]" name="postUser" class="APITesting.Postmethod01"/>
       </group> <!-- createBooking -->
     </groups>
-    <test started-at="2026-05-28T23:06:12 IST" name="Default test" finished-at="2026-05-28T23:06:20 IST" duration-ms="7623">
+    <test started-at="2026-05-29T00:04:02 IST" name="Default test" finished-at="2026-05-29T00:04:39 IST" duration-ms="37165">
       <class name="APITesting.GETMethod01">
-        <test-method signature="getMethod()[pri:0, instance:APITesting.GETMethod01@692f203f]" started-at="2026-05-28T23:06:17 IST" name="getMethod" depends-on-groups="createBooking" finished-at="2026-05-28T23:06:20 IST" duration-ms="2311" status="PASS">
+        <test-method signature="getMethod()[pri:0, instance:APITesting.GETMethod01@a1153bc]" started-at="2026-05-29T00:04:07 IST" name="getMethod" depends-on-groups="createBooking" finished-at="2026-05-29T00:04:09 IST" duration-ms="2108" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getMethod -->
       </class> <!-- APITesting.GETMethod01 -->
+      <class name="APITesting.GETMethod02">
+        <test-method signature="getMethod()[pri:0, instance:APITesting.GETMethod02@4218d6a3]" started-at="2026-05-29T00:04:35 IST" name="getMethod" depends-on-groups="updateUser" finished-at="2026-05-29T00:04:37 IST" duration-ms="2334" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getMethod -->
+      </class> <!-- APITesting.GETMethod02 -->
       <class name="APITesting.Postmethod01">
-        <test-method signature="postUser()[pri:0, instance:APITesting.Postmethod01@3270d194]" started-at="2026-05-28T23:06:12 IST" name="postUser" finished-at="2026-05-28T23:06:17 IST" duration-ms="5213" status="PASS">
+        <test-method signature="postUser()[pri:0, instance:APITesting.Postmethod01@76505305]" started-at="2026-05-29T00:04:02 IST" name="postUser" finished-at="2026-05-29T00:04:07 IST" duration-ms="5085" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- postUser -->
       </class> <!-- APITesting.Postmethod01 -->
+      <class name="APITesting.DELETEMethod01">
+        <test-method signature="putMethod()[pri:0, instance:APITesting.DELETEMethod01@14cd1699]" started-at="2026-05-29T00:04:37 IST" name="putMethod" depends-on-groups="getBooking1" finished-at="2026-05-29T00:04:39 IST" duration-ms="2060" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- putMethod -->
+      </class> <!-- APITesting.DELETEMethod01 -->
+      <class name="APITesting.PUTMethod01">
+        <test-method signature="token()[pri:1, instance:APITesting.PUTMethod01@71d44a3]" started-at="2026-05-29T00:04:09 IST" name="token" finished-at="2026-05-29T00:04:12 IST" duration-ms="2210" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- token -->
+        <test-method signature="putMethod()[pri:2, instance:APITesting.PUTMethod01@71d44a3]" started-at="2026-05-29T00:04:12 IST" name="putMethod" depends-on-groups="getBooking" finished-at="2026-05-29T00:04:35 IST" depends-on-methods="APITesting.PUTMethod01.token" duration-ms="23283" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- putMethod -->
+      </class> <!-- APITesting.PUTMethod01 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
