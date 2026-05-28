@@ -25,7 +25,7 @@ public class DELETEMethod01 {
 		System.out.println("Token ===> " + token);
 	}*/
 
-	@Test(/*priority = 2, dependsOnMethods = { "token" },*/ dependsOnGroups = { "getBooking1" }, groups = {"deleteUser"})
+	@Test(/*priority = 2, dependsOnMethods = { "token" },*/ dependsOnGroups = { "getBooking2" }, groups = {"deleteUser"})
 	void deleteMethod() {
 
 		given().header("Cookie", "token=" + PUTMethod01.token).when()
